@@ -6,7 +6,6 @@ import com.esoluzion.service.product.manager.dto.PriceOutputDTO;
 import com.esoluzion.service.product.manager.dto.PriceValidateRequestDTO;
 import com.esoluzion.service.product.manager.logic.PriceValidateLogic;
 import com.esoluzion.service.product.manager.mapper.PricesMapper;
-import com.esoluzion.service.product.manager.model.PricesModelDTO;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;

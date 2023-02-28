@@ -6,7 +6,6 @@ import com.esoluzion.service.product.manager.logic.impl.PriceValidateLogicImpl;
 import com.esoluzion.service.product.manager.mapper.PricesMapper;
 import com.esoluzion.service.product.manager.model.PricesModelDTO;
 import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -21,6 +20,7 @@ import java.util.List;
 
 import static com.esoluzion.service.product.manager.enums.Status.BAD_REQUEST;
 import static com.esoluzion.service.product.manager.enums.Status.NOT_FOUND;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 @SpringBootTest
@@ -66,7 +66,7 @@ public class PriceValidateLogicImplTest {
         try {
             priceValidateLogic.validateRequest(request);
         } catch (BusinessCapabilityException e) {
-            Assertions.assertEquals(BAD_REQUEST.getCode(), e.getReturnCode());
+            assertEquals(BAD_REQUEST.getCode(), e.getReturnCode());
         }
 
     }
@@ -83,7 +83,7 @@ public class PriceValidateLogicImplTest {
         try {
             priceValidateLogic.validateTimeframe(values, request);
         } catch (BusinessCapabilityException e) {
-            Assertions.assertEquals(NOT_FOUND.getCode(), e.getReturnCode());
+            assertEquals(NOT_FOUND.getCode(), e.getReturnCode());
         }
 
     }
