@@ -14,100 +14,59 @@
 	<name>esoluzion-product-manager</name>
 	<description>Product manager microservices.</description>
 	<properties>
-		<encoding>UTF-8</encoding>
 		<java.version>11</java.version>
-		<maven.compiler.source>11</maven.compiler.source>
-		<maven.compiler.target>11</maven.compiler.target>
-		<mapstruct.version>1.4.2.Final</mapstruct.version>
-		<spring-cloud.version>2020.0.4</spring-cloud.version>
-		<springfox-swagger.version>2.9.2</springfox-swagger.version>
-		<springfox-bean-validators.version>2.9.2</springfox-bean-validators.version>
-		<springfox-swagger-ui.version>2.9.2</springfox-swagger-ui.version>
-		<com.fasterxml.jackson.core.version>2.12.3</com.fasterxml.jackson.core.version>
-		<mockito-object-injection.version>2.0.2</mockito-object-injection.version>
-		<aws-sdk.version>1.11.517</aws-sdk.version>
-		<log4j.version>2.17.1</log4j.version>
-		<lombok.version>1.18.8</lombok.version>
-		<javax.validation.version>2.0.1.Final</javax.validation.version>
 	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-circuitbreaker-reactor-resilience4j</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-
-		<!-- Librerias Swagger -->
 		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger2</artifactId>
-			<version>${springfox-swagger.version}</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-bean-validators</artifactId>
-			<version>${springfox-bean-validators.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger-ui</artifactId>
-			<version>${springfox-swagger-ui.version}</version>
-			<scope>compile</scope>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
 		</dependency>
 
-		<!-- Librerias de Jackson -->
+		<!-- Librerias Jackson -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-core</artifactId>
-			<version>${com.fasterxml.jackson.core.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-annotations</artifactId>
-			<version>${com.fasterxml.jackson.core.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>${com.fasterxml.jackson.core.version}</version>
 		</dependency>
 
-		<!-- Libreria de Mockito -->
-		<dependency>
-			<groupId>com.github.exabrial</groupId>
-			<artifactId>mockito-object-injection</artifactId>
-			<version>${mockito-object-injection.version}</version>
-			<scope>test</scope>
-		</dependency>
-
-		<!-- Libreria de mapeos MapStruct -->
+		<!-- Libreria MapStruct -->
 		<dependency>
 			<groupId>org.mapstruct</groupId>
 			<artifactId>mapstruct</artifactId>
-			<version>${mapstruct.version}</version>
+			<version>1.4.2.Final</version>
 		</dependency>
 		<dependency>
 			<groupId>org.mapstruct</groupId>
 			<artifactId>mapstruct-processor</artifactId>
-			<version>${mapstruct.version}</version>
+			<version>1.4.2.Final</version>
+		</dependency>
+
+		<!-- Libreria Swagger -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>3.0.0</version>
 		</dependency>
 
 		<!-- LOMBOK -->
@@ -115,14 +74,12 @@
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
-			<version>${lombok.version}</version>
 		</dependency>
 
 		<!-- Librerias de validacion -->
 		<dependency>
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
-			<version>${javax.validation.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -130,30 +87,16 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- SWAGGER -->
+		<!-- Libreria de Mockito -->
 		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger2</artifactId>
-			<version>3.0.0</version>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>4.8.0</version>
+			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger-ui</artifactId>
-			<version>3.0.0</version>
-		</dependency>
-	</dependencies>
 
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>${spring-cloud.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
+
+	</dependencies>
 
 	<build>
 		<plugins>
