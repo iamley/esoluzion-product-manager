@@ -17,7 +17,6 @@ public interface PricesMapper {
 
     @InheritInverseConfiguration
     @IterableMapping(elementTargetType = PricesModelDTO.class)
-    PricesModelDTO toPricesValidateList(PricesDTO values);
     List<PricesModelDTO> toPricesValidateList(List<PricesDTO> values);
 
 }

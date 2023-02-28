@@ -22,13 +22,13 @@ public class SwaggerConfig {
     @Value("${bg.swagger.enabled}")
     private Boolean swaggerEnabled;
 
-    private static final String HTTPURL= "https://capitole-consulting.com/es/";
+    private static final String HTTPURL= "https://esoluzion.com/es/";
 
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.capitole.service.backend"))
+                .apis(RequestHandlerSelectors.basePackage("com.esoluzion.service.product.manager"))
                 .build()
                 .apiInfo(getApiInfo())
                 .enable(swaggerEnabled);
@@ -38,7 +38,7 @@ public class SwaggerConfig {
     private ApiInfo getApiInfo() {
 
         List<VendorExtension> vendorExtensions = new ArrayList<>();
-        Contact contact = new Contact("Capitole Consulting", HTTPURL, "contact@capitole-consulting.com");
+        Contact contact = new Contact("Esoluzion Consulting", HTTPURL, "contact@esoluzion.com");
         return new ApiInfo("API Rest | Product management microservices",
                 "Product management API",
                 "1.0.0",
