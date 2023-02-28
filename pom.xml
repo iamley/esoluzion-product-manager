@@ -36,6 +36,13 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- RESILIENCE4j -->
+		<dependency>
+			<groupId>io.github.resilience4j</groupId>
+			<artifactId>resilience4j-spring-boot2</artifactId>
+			<version>1.7.1</version>
+		</dependency>
+
 		<!-- Librerias Jackson -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
